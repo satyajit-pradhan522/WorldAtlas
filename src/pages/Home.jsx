@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaLongArrowAltRight } from 'react-icons/fa'
+import About from './About'
 
 function Home() {
   return (
@@ -19,6 +20,9 @@ function Home() {
             <div className='hero-image'>
                 <img src="src\assets\world.png" alt="world is beauty" className='banner-image' />
             </div>
+        </div>
+        <div className='container'>
+            <About/>
         </div>
     </main>
   )
