@@ -1,7 +1,14 @@
-import React from 'react'
+import React,{useState} from 'react'
+import { GiHamburgerMenu } from 'react-icons/gi';
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
+    const [showMenu, setShowMenu] = useState(false)
+
+    const handleButtonToggle = () => {
+        return setShowMenu(!showMenu);
+    }
+
   return (
     <header>
         <div className='container'>
@@ -11,7 +18,7 @@ function Navbar() {
                         <h1>WorldAtlas</h1>
                     </NavLink>
                 </div>
-                <nav>
+                <nav className={showMenu ? "menu-mobile" : "menu-web"}>
                     <ul>
                         <li>
                             <NavLink to="/">Home</NavLink>
@@ -27,6 +34,13 @@ function Navbar() {
                         </li>
                     </ul>
                 </nav>
+
+
+                <div className='ham-menu'>
+                    <button onClick={handleButtonToggle}>
+                        <GiHamburgerMenu />
+                    </button>
+                </div>
             </div>
         </div>
     </header>
